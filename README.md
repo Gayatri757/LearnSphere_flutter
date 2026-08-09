@@ -16,15 +16,15 @@ Video Lectures · Notes & PDFs · MCQs · Study Plans · Premium Learning
 
 ## 📖 About LearnSphere
 
-LearnSphere is a **full-stack educational platform** designed to bring different parts of the learning journey into a single mobile application.
+**LearnSphere** is a full-stack educational platform designed to bring different parts of the learning journey into a single mobile application.
 
 Instead of switching between multiple platforms for lectures, notes, question practice, and study planning, students can access their learning resources through one structured Flutter application.
 
-The current content library is **medical/MBBS-focused**, but LearnSphere itself is not limited to medical education. The application is designed to support additional academic domains through subjects and structured content.
+The current content library is **medical/MBBS-focused**, but LearnSphere itself is not limited to medical education. The application is structured around generic concepts such as subjects, videos, notes, MCQs, study plans, and premium learning, allowing it to be extended to other academic domains.
 
 This repository contains the **Flutter frontend/mobile application**.
 
-For the complete backend architecture, APIs, database, authentication, subscriptions, and deployment details:
+For the complete backend architecture, REST APIs, database, authentication, subscriptions, email services, cloud storage, and deployment details:
 
 👉 **Backend Repository:**  
 https://github.com/Gayatri757/THE-LEARNSPHERE
@@ -45,12 +45,12 @@ https://github.com/Gayatri757/THE-LEARNSPHERE
 - View premium subscription status
 - Access premium learning content based on subscription
 - View profile and account information
-- Switch between Light & Dark mode
+- Light & Dark mode support
 - Secure authentication and session handling
 
 ### 👩‍🏫 Teacher Experience
 
-The Flutter application also provides a dedicated teacher workflow for managing educational content.
+The Flutter application provides a dedicated teacher workflow for managing educational content.
 
 Teachers can:
 
@@ -61,7 +61,7 @@ Teachers can:
 - Add MCQs individually
 - Upload MCQs in bulk
 - Create study plans
-- Create and manage premium subscription plans
+- Manage premium subscription plans
 - Configure premium plans based on subject and duration
 - Manage teacher-side educational content
 - View teacher analytics
@@ -84,11 +84,10 @@ LearnSphere includes a complete authentication flow in the Flutter application:
 - Secure local token storage
 - Automatic handling of expired authentication sessions
 
-Authentication and authorization are implemented through the LearnSphere backend API.
+Authentication and authorization are handled through the LearnSphere backend API.
 
-For backend authentication implementation and API details:
-
-👉 https://github.com/Gayatri757/THE-LEARNSPHERE
+👉 **Backend Authentication & API:**  
+https://github.com/Gayatri757/THE-LEARNSPHERE
 
 ---
 
@@ -96,12 +95,12 @@ For backend authentication implementation and API details:
 
 The application uses Flutter's Material UI system with centralized theme management.
 
-### Supported Themes
+### Supported themes
 
 - ☀️ Light Mode
 - 🌙 Dark Mode
 
-Theme state is managed centrally across the application, providing a consistent UI experience across screens.
+Theme state is managed centrally so the appearance remains consistent throughout the application.
 
 The user's theme preference is also persisted between app sessions.
 
@@ -156,17 +155,27 @@ lib/
 ├── widgets/
 │
 └── main.dart
-🛠️ Frontend Tech Stack
-Technology	Purpose
-Flutter	Cross-platform mobile application framework
-Dart	Application programming language
-Material UI	User interface components
-flutter_secure_storage	Secure local storage for authentication data
-HTTP	Communication with backend REST APIs
-YouTube Embeds	Video lecture playback
-Centralized Theme Management	Light/Dark mode management
-Razorpay Integration	Premium subscription payment flow
-🔄 Application Flow
+```
+
+---
+
+## 🛠️ Frontend Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Flutter** | Cross-platform mobile application |
+| **Dart** | Application programming language |
+| **Material UI** | User interface components |
+| **flutter_secure_storage** | Secure local storage for authentication data |
+| **HTTP** | Communication with backend REST APIs |
+| **YouTube Embeds** | Video lecture playback |
+| **Centralized Theme Management** | Application-wide Light/Dark mode |
+
+---
+
+## 🔄 Application Flow
+
+```text
                     LearnSphere Flutter App
                              │
                              ▼
@@ -197,126 +206,162 @@ Razorpay Integration	Premium subscription payment flow
                              │
                              ▼
                        Subscriptions
-💳 Premium Learning
+```
+
+---
+
+## 💳 Premium Learning
 
 LearnSphere supports subscription-based learning.
 
-Teachers can create and manage premium plans based on:
+Teachers can create and manage premium plans according to:
 
-Subject
-Duration
-Premium content access
+- Subject
+- Duration
+- Premium content access
 
 Students can view their subscription status and access premium learning resources when their subscription is active.
 
-The Flutter application communicates with the backend to retrieve subscription status and enforce the appropriate application flow.
+Subscription validation and business logic are handled by the backend.
 
-The server-side subscription logic and validation are handled by the backend.
-
-👉 Backend implementation:
+👉 **Backend Subscription Implementation:**  
 https://github.com/Gayatri757/THE-LEARNSPHERE
 
-📚 Current Content
+---
 
-The current content library is focused on medical/MBBS-oriented subjects as the initial domain.
+## 📚 Current Content
 
-However, the Flutter application is structured around generic concepts such as:
+The current content library is focused on **medical/MBBS-oriented subjects** as the initial domain.
 
-Subjects
-Videos
-Notes
-MCQs
-Study Plans
-Premium Plans
+However, the Flutter application is built around generic educational concepts:
 
-This allows LearnSphere to be extended to other academic domains without redesigning the entire application.
+- Subjects
+- Videos
+- Notes
+- PDFs
+- MCQs
+- Study Plans
+- Premium Plans
 
-🚀 Getting Started
-1. Clone the repository
+This makes the application adaptable to other academic domains without requiring a complete redesign of the frontend.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/Gayatri757/LearnSphere_flutter.git
-2. Enter the project
+```
+
+### 2. Enter the project
+
+```bash
 cd LearnSphere_flutter
-3. Install dependencies
+```
+
+### 3. Install dependencies
+
+```bash
 flutter pub get
-4. Connect the backend
+```
 
-The Flutter application requires the LearnSphere backend API.
+### 4. Connect the backend
 
-Backend repository:
+The Flutter application requires the LearnSphere backend API to be available.
 
+👉 **Backend Repository:**  
 https://github.com/Gayatri757/THE-LEARNSPHERE
 
 Make sure the API base URL configured in the Flutter application points to the running backend.
 
-5. Run the application
+### 5. Run the application
+
+```bash
 flutter run
-📱 Supported Platform
+```
 
-The project is primarily developed as a Flutter mobile application.
+---
 
-Flutter's generated platform structure is also included in the repository for cross-platform development.
+## 📱 Supported Platform
 
-🔗 Related Repository
-Backend — LearnSphere
+The project is primarily developed as a **Flutter mobile application**.
 
-The backend repository contains:
+Flutter's generated platform directories are also included in the repository for cross-platform development.
 
-Flask REST APIs
-Authentication
-JWT authorization
-Role-based access control
-Database models
-PostgreSQL / Neon integration
-Subscription management
-Content management
-Email / OTP services
-Cloud storage integration
-Backend deployment
+---
 
-👉 Backend Repository:
+## 🔗 Related Repository
+
+### Backend — LearnSphere
+
+The backend repository contains the server-side implementation, including:
+
+- REST APIs
+- Authentication
+- JWT authorization
+- Database models
+- PostgreSQL / Neon integration
+- Subscription management
+- Content management
+- Email / OTP services
+- Cloud storage integration
+- Backend deployment
+
+👉 **Backend Repository:**  
 https://github.com/Gayatri757/THE-LEARNSPHERE
 
-🚧 Project Status
+---
 
-LearnSphere is currently in active development.
+## 🚧 Project Status
+
+LearnSphere is currently **in active development**.
 
 The core student and teacher workflows are implemented, including:
 
-Authentication
-Email/OTP verification
-Educational content
-MCQs
-Study plans
-Premium plans
-Subscription access
-Teacher content management
-Light/Dark theme support
-Planned Improvements
- Deeper teacher analytics
- More self-service content management
- Support for additional academic domains
- Expanded subscription functionality
- Further UI/UX improvements
-👩‍💻 Developer
+- Authentication
+- Educational content
+- Video lectures
+- Notes and PDFs
+- MCQs
+- Study plans
+- Premium plans
+- Subscription access
+- Teacher content management
+- Light/Dark mode
 
-Gayatri Adatiya
+### Planned Improvements
+
+- Deeper teacher analytics
+- More self-service content management
+- Support for additional academic domains
+- Expanded subscription functionality
+- Further UI/UX improvements
+
+---
+
+## 👩‍💻 Developer
+
+**Gayatri Adatiya**
 
 AI & Data Science student interested in building full-stack, ML-powered, and scalable applications.
 
-Open to Opportunities
+### Open to opportunities
 
-🤖 ML Engineer
-📱 Flutter Developer
-🐍 Python Developer
+🤖 **ML Engineer**  
+📱 **Flutter Developer**  
+🐍 **Python Developer**
 
-GitHub:
-
+GitHub:  
 https://github.com/Gayatri757
+
+---
 
 <div align="center">
 
-🎓 Learn. Practice. Organize. Grow.
+### 🎓 Learn. Practice. Organize. Grow.
 
-LearnSphere — Bringing the learning journey together.
+**LearnSphere — Bringing the learning journey together.**
 
-</div> ```
+</div>
