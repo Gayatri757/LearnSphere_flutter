@@ -56,3 +56,7 @@ GoogleService-Info.plist
 # OS
 .DS_Store
 Thumbs.db
+
+# Local error/debug files
+error_log.txt
+*.log
